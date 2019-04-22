@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DbTodoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Todo">
+    <Key>
+      <PropertyRef Name="IdTodo" />
+    </Key>
+    <Property Name="IdTodo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="150" />
+    <Property Name="Status" Type="varchar" MaxLength="1" />
+    <Property Name="AttachType" Type="nvarchar" MaxLength="4" />
+    <Property Name="AttachFile" Type="varbinary(max)" />
+  </EntityType>
+  <EntityContainer Name="DbTodoModelStoreContainer">
+    <EntitySet Name="Todo" EntityType="Self.Todo" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
